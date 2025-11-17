@@ -69,4 +69,11 @@ const discountedBooks = availableBooks.map(book => {
         price: `${discountedPrice}€`
     }
 })
+
+const fullPricedBook = discountedBooks.find(book => {
+    const price = parseFloat(book.price.replace('€',''))
+    return Number.isInteger(price)
+})
+
 console.log(discountedBooks)
+console.log(fullPricedBook)
