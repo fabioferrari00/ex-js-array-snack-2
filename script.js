@@ -84,11 +84,20 @@ Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono
 Ordina l’array authors in base all’età, senza creare un nuovo array.
 (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente) */
 
-const authors = books.map(book => book.author);
+/* const authors = books.map(book => book.author);
 const areAuthorsAdults = authors.every(author => author.age >= 18);
 authors.sort((a, b) => {
     return b.age - a.age
 })
+console.log(authors) */
 
+//SNACK 4: Creare un array (ages) che contiene le età degli autori dei libri.
+/* Calcola la somma delle età (agesSum) usando reduce.
+Stampa in console l’età media degli autori dei libri. */
 
-console.log(authors)
+const authors = books.map(book => book.author);
+const ages = authors.map(author => author.age)
+const agesSum = ages.reduce((acc, a) => acc + a, 0);
+const averageAge = agesSum / authors.length
+
+console.log(averageAge)
