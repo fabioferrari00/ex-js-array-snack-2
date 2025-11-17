@@ -60,7 +60,7 @@ books.forEach(book => console.log(book.title)) */
 lo stesso formato e arrotonda al centesimo)
 Salva in una variabile (fullPricedBook) il primo elemento di discountedBooks che ha un prezzo intero (senza centesimi). */
 
-const availableBooks = books.filter(book => book.available === true);
+/* const availableBooks = books.filter(book => book.available === true);
 const discountedBooks = availableBooks.map(book => {
     const price = parseFloat(book.price.replace('€',''))
     const discountedPrice = (price * 0.8).toFixed(2)
@@ -76,4 +76,19 @@ const fullPricedBook = discountedBooks.find(book => {
 })
 
 console.log(discountedBooks)
-console.log(fullPricedBook)
+console.log(fullPricedBook) */
+
+/* SNACK 3: 
+Creare un array (authors) che contiene gli autori dei libri.
+Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
+Ordina l’array authors in base all’età, senza creare un nuovo array.
+(se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente) */
+
+const authors = books.map(book => book.author);
+const areAuthorsAdults = authors.every(author => author.age >= 18);
+authors.sort((a, b) => {
+    return b.age - a.age
+})
+
+
+console.log(authors)
